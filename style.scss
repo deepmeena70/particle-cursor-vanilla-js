@@ -1,0 +1,34 @@
+$primary: black;
+$secondary: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $primary;
+  color: $secondary;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  .text {
+    font-size: 4.2rem;
+    letter-spacing: 0.7rem;
+    line-height: calc(100vh - 2rem);
+    text-shadow: 0 0 22px white, 0 0 12px blue;
+  }
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -99;
+}
