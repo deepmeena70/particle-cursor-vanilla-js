@@ -11,7 +11,6 @@
       this.x = 200 * Math.random();
       this.y = 45;
       this.size = 0;
-      this.hslDeg = 50 * Math.random();
       this.deg = 0;
       this.hslDeg = 150;
       this.hslX = 100;
