@@ -1,12 +1,10 @@
 (function () {
   console.log('javascript is running...');
 
-  const body = document.querySelector('body');
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
   const numberOfParticles = 865;
   let particles = [];
-  let raf;
 
   class Particle {
     constructor() {
@@ -58,6 +56,7 @@
     console.log('number of filled particles:', particles.length);
   };
 
+  //   canvas cleaner
   const clear = () => {
     ctx.globalAlpha = 0.185;
     ctx.fillStyle = '#000000';
@@ -69,7 +68,7 @@
     clear();
     for (let i = 0; i < particles.length; i++) {
       if (particles[i].deg > 360) {
-        particles[i].deg = i/10 ;
+        particles[i].deg = i / 10;
       }
       particles[i].deg -= i / 270;
       particles[i].size = i / 400;
@@ -77,8 +76,7 @@
       particles[i].rotate();
       particles[i].scatter();
     }
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
   };
 
   //   initializer
@@ -92,6 +90,7 @@
   //   initializing
   init();
 
+  //   resize event listener
   addEventListener('resize', (e) => setCanvas());
 
   const trace = (e) => {
@@ -108,5 +107,6 @@
     });
   };
 
+  //   mouse move event listener
   addEventListener('mousemove', trace);
 })();

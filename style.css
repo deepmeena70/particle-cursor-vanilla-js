@@ -14,17 +14,28 @@ body {
 
 .text-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  flex-direction: column;
 }
 .text-container .text {
   font-size: 4.2rem;
   letter-spacing: 0.7rem;
-  line-height: calc(100vh - 2rem);
   text-shadow: 0 0 22px white, 0 0 12px blue;
+  margin-top: 42vh;
+}
+
+.link-container {
+  margin-top: 2rem;
+}
+.link-container a {
+  text-decoration: none;
+  margin: 0rem 1.1rem 0 1.1rem;
+  color: inherit;
+  font-size: 2rem;
 }
 
 #canvas {
